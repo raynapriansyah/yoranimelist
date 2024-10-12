@@ -1,6 +1,6 @@
 import TopAnime from "~/components/topanime";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
       <h1>Top Anime</h1>
