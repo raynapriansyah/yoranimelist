@@ -23,9 +23,9 @@ export default async function TopAnime() {
           {Array.from({ length: 1 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              // className="basis-1/2 md:basis-1/3 lg:basis-1/4"
             >
-              <div className="p-1 gap-4">
+              <div className="p-1 gap-4 grid grid-cols-4">
                 {animes.data.map((data: any) => {
                   return (
                     <Card key={data.mal_id}>
