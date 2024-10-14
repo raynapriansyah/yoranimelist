@@ -17,17 +17,13 @@ export default function TopAnimeSlide() {
       });
   }, []);
 
-  const plugin = React.useRef(
-    Autoplay({ delay: 1000, stopOnInteraction: true })
-  );
-
   if (!data) return <p></p>;
 
   return (
     <Carousel
       plugins={[
         Autoplay({
-          delay: 3000,
+          delay: 4000,
         }),
       ]}
     >
