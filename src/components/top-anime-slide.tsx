@@ -13,7 +13,7 @@ export default function TopAnimeSlide() {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/anime`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data.data); // Anime list
+        setData(data.data);
       });
   }, []);
 
@@ -23,7 +23,7 @@ export default function TopAnimeSlide() {
     <Carousel
       plugins={[
         Autoplay({
-          delay: 4000,
+          delay: 2000,
         }),
       ]}
     >
