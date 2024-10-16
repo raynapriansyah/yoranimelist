@@ -15,7 +15,7 @@ export default async function TopAnime() {
             key={anime.mal_id}
             className="basis-1/3 md:basis-1/4 lg:basis-1/6"
           >
-            <div className="mb-4 flex justify-center">
+            <div className="flex justify-center">
               <Image
                 src={anime.images.jpg.image_url}
                 alt={anime.title}

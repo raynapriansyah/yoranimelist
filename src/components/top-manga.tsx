@@ -16,7 +16,7 @@ export default async function TopManga() {
             key={manga.mal_id}
             className="basis-1/3 md:basis-1/4 lg:basis-1/6"
           >
-            <div className="mb-4 flex justify-center">
+            <div className="flex justify-center">
               <Image
                 src={manga.images.jpg.image_url}
                 alt={manga.title}
