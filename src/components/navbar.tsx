@@ -2,14 +2,15 @@ import { Menubar, MenubarMenu } from "~/components/ui/menubar";
 import { Input } from "~/components/ui/input";
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
-import Link from "next/link";
 
 export default function Navbar() {
   return (
     <div>
       <Menubar className="flex justify-between p-8 ">
         <div>
-          <MenubarMenu>YORANIMELIST</MenubarMenu>
+          <MenubarMenu>
+            <h1 className="font-bold text-cyan-800 text-2xl">YORANIMELIST</h1>
+          </MenubarMenu>
         </div>
         <div className="flex md:w-full md:max-w-sm md:items-center md:space-x-2">
           <Input

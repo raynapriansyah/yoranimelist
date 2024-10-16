@@ -1,7 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
 import { Card, CardContent } from "~/components/ui/card";
-import Link from "next/link";
 
 export default async function TopAnime() {
   async function getAnimeTop() {
