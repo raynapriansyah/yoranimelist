@@ -1,36 +1,16 @@
 import Image from "next/image";
 import * as React from "react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import { getAnimeTop } from "~/api/route";
+import { AnimeApiProps } from "~/lib/type";
 
-type AnimeApi = {
-  mal_id: number;
-  title: string;
-  score: number;
-  images: {
-    jpg: {
-      image_url: string;
-    };
-  };
-};
-
-export default async function TopAnimeSlide() {
-  async function getAnimeTop() {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/top/anime?limit=8`
-    );
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    const data = await response.json();
-    return data;
-  }
-
+export default async function TopAnime() {
   const animeData = await getAnimeTop();
 
   return (
     <Carousel>
       <CarouselContent>
-        {animeData.data.map((anime: AnimeApi) => (
+        {animeData.data.map((anime: AnimeApiProps) => (
           <CarouselItem
             key={anime.mal_id}
             className="basis-1/3 md:basis-1/4 lg:basis-1/6"
