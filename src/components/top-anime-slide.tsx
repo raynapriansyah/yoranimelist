@@ -10,7 +10,7 @@ export default function TopAnimeSlide() {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/anime`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/anime?limit=8`)
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
@@ -37,12 +37,13 @@ export default function TopAnimeSlide() {
               <div className="mb-4 flex justify-center">
                 <Image
                   src={anime.images.jpg.image_url}
-                  alt="imageAnime"
+                  alt="imageAnimeTop"
                   width={250}
                   height={250}
+                  className="aspect-square"
                 />
               </div>
-              <div className="text-[12px] md:text-[14px] lg:text-lg text-center justify-center">
+              <div className="font-bold text-[12px] md:text-[14px] lg:text-lg text-center justify-center">
                 <h1>{anime.title}</h1>
                 <h1>⭐{anime.score}</h1>
               </div>

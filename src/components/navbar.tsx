@@ -2,11 +2,12 @@ import { Menubar, MenubarMenu } from "~/components/ui/menubar";
 import { Input } from "~/components/ui/input";
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <div>
-      <Menubar className="flex justify-between p-8">
+      <Menubar className="flex justify-between p-8 ">
         <div>
           <MenubarMenu>YORANIMELIST</MenubarMenu>
         </div>
@@ -16,7 +17,7 @@ export default function Navbar() {
             placeholder="Search Anime"
             className="hidden md:block"
           />
-          <Button type="submit">
+          <Button type="submit" className="bg-cyan-800">
             <Search />
           </Button>
         </div>
