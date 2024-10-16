@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-type AnimeApi = {
+type MangaApi = {
   mal_id: number;
   title: string;
   images: {
@@ -17,37 +17,37 @@ type AnimeApi = {
   score: number;
 };
 
-export default function TopAnimeSlide() {
-  const [anime, setAnime] = useState<AnimeApi[]>([]);
+export default function TopMangaSlide() {
+  const [manga, setManga] = useState<MangaApi[]>([]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/anime?limit=8`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/top/manga?limit=8`)
       .then((res) => res.json())
       .then((data) => {
-        setAnime(data.data);
+        setManga(data.data);
       });
   }, []);
 
-  if (!anime) return <p></p>;
+  if (!manga) return <p></p>;
 
   return (
     <Carousel
       plugins={[
         Autoplay({
-          delay: 2000,
+          delay: 3000,
         }),
       ]}
     >
       <CarouselContent>
-        {anime.map((anime: AnimeApi) => {
+        {manga.map((manga: MangaApi) => {
           return (
             <CarouselItem
-              key={anime.mal_id}
+              key={manga.mal_id}
               className="basis-1/3 md:basis-1/4 lg:basis-1/6"
             >
               <div className="mb-4 flex justify-center">
                 <Image
-                  src={anime.images.jpg.image_url}
+                  src={manga.images.jpg.image_url}
                   alt="imageAnimeTop"
                   width={250}
                   height={250}
@@ -55,8 +55,8 @@ export default function TopAnimeSlide() {
                 />
               </div>
               <div className="font-bold text-[12px] md:text-[14px] lg:text-lg text-center justify-center">
-                <h1>{anime.title}</h1>
-                <h1>⭐{anime.score}</h1>
+                <h1>{manga.title}</h1>
+                <h1>⭐{manga.score}</h1>
               </div>
             </CarouselItem>
           );

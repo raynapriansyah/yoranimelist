@@ -1,11 +1,12 @@
 import * as React from "react";
 import Image from "next/image";
 import { Card, CardContent } from "~/components/ui/card";
+import Link from "next/link";
 
 export default async function TopAnime() {
   async function getAnimeTop() {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/top/anime?limit=14`
+      `${process.env.NEXT_PUBLIC_API_URL}/top/anime`
     );
     const data = await response.json();
     return data;
