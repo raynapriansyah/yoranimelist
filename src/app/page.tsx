@@ -1,6 +1,6 @@
 import Link from "next/link";
-import TopAnime from "~/components/top-anime";
-import TopManga from "~/components/top-manga";
+import TopAnime from "~/components/top-anime/all-top-anime";
+import TopManga from "~/components/top-manga/all-top-manga";
 
 export default function Home() {
   return (
